@@ -22,8 +22,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 <script>
 
-var w = 600
-var h = 500
+var w = 2000
+var h = 1600
 var margin = 5
 var padding = 50
 
