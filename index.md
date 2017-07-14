@@ -9,7 +9,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 
-<iframe src="http://bl.ocks.org/WadeWarren1/raw/bd569c5225e20fea221ebbdb3ff0cc0a/b3455a343cacb7556ea47ebb9806f69584b63142/" marginwidth="0" marginheight="0" style="height:500px;" scrolling="no"> </iframe>
+<script src="https://d3js.org/d3.v4.min.js"></script> 
+<script src="https://github.com/WadeWarren1/WadeWarren1.github.io/blob/master/grid.js"></script>
 
 
 ```markdown
