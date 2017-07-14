@@ -33,7 +33,7 @@ var gwidth = (gheight*4)
 
 		// Get the data
   
- d3.csv("https://github.com/WadeWarren1/WadeWarren1.github.io/blob/master/data.csv", function(error, data) {
+ d3.csv("WadeWarren1.github.io/data.csv", function(error, data) {
 
    data.forEach(function(d) {
           if (error) throw error;
