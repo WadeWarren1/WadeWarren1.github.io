@@ -22,9 +22,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 <script>
 
-var width = $("#d3div").width(),
-    height = 500;
-var h = 1000
+var w = 800
+var h = 650
 var margin = 5
 var padding = 50
 
