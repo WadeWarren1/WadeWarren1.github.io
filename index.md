@@ -4,7 +4,7 @@ You can use the [editor on GitHub](https://github.com/WadeWarren1/WadeWarren1.gi
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### Predictions
 
 <style>
 .bar {
@@ -22,8 +22,8 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
 <script>
 
-var w = 600
-var h = 500
+var w = 800
+var h = 650
 var margin = 5
 var padding = 50
 
@@ -126,24 +126,6 @@ svg.selectAll ("text")
 	});
 </script>
 
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
