@@ -52,7 +52,7 @@ Add Spreadsheet here
 var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height"),
-    g = svg.append("g").attr("transform", "translate(" + (width / 2 + 40) + "," + (height / 2 + 90) + ")");
+    g = svg.append("g").attr("transform", "translate(" + (width / 2 + 1) + "," + (height / 2 + 2) + ")");
 
 var stratify = d3.stratify()
     .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
