@@ -26,7 +26,7 @@ Add Spreadsheet here
 }
 
 .node text {
-  font: 12px sans-serif;
+  font: 10px sans-serif;
 }
 
 .node--internal circle {
@@ -52,13 +52,13 @@ Add Spreadsheet here
 var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height"),
-    g = svg.append("g").attr("transform", "translate(" + (width / 2 + 1) + "," + (height / 2 + 2) + ")");
+    g = svg.append("g").attr("transform", "translate(" + (width / 2 ) + "," + (height / 2 ) + ")");
 
 var stratify = d3.stratify()
     .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
 
 var tree = d3.tree()
-    .size([2 * Math.PI, 150])
+    .size([2 * Math.PI, 100])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 
 d3.csv("gotwheeldata.csv", function(error, data) {
@@ -91,7 +91,7 @@ d3.csv("gotwheeldata.csv", function(error, data) {
       .attr("text-anchor", function(d) { return d.x < Math.PI === !d.children ? "start" : "end"; })
       .attr("transform", function(d) { return "rotate(" + (d.x < Math.PI ? d.x - Math.PI / 2 : d.x + Math.PI / 2) * 180 / Math.PI + ")"; })
       .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); })
-      .style("font-size", function(d) {if (d.id.length < 10) {return 15} else if (d.id.length < 15) {return 12}})
+      .style("font-size", function(d) {if (d.id.length < 10) {return 10} else if (d.id.length < 15) {return 10}})
       .attr("fill", "Black")
 });
 
