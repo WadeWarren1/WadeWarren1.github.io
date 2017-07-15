@@ -44,7 +44,7 @@ Add Spreadsheet here
   stroke-width: 1.5px;
 }
 </style>
-<svg width="480" height="530"></svg>
+<svg width="960" height="1060"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
