@@ -1,10 +1,23 @@
-## Welcome to the S7 Prediction Game
+## Welcome to the Game of Thrones Season 7 Prediction Challenge
 
-You can use the [editor on GitHub](https://github.com/WadeWarren1/WadeWarren1.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Thanks for submitting your Game of Thrones season 7 predictions! Below you will find the Rules, Leaderboard, and Wheel of Predictions. These will be updated weekly. Good Luck!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Rules
 
-### Predictions
+Scoring:
+* 1 point for correct survival prediction
+* 2 points for correct death prediction
+* 1 addition point for correct death timing prediction 
+
+Death timing is divided into 2 categories
+* Early = episodes 1-4
+* Late = episdoes 5-7
+
+### Leaderboard
+
+Add Spreadsheet here
+
+### Wheel of Predictions
 
 <style>
 .bar {
@@ -128,10 +141,6 @@ svg.selectAll ("text")
 
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/WadeWarren1/WadeWarren1.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
 
