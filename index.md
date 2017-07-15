@@ -43,8 +43,9 @@ Add Spreadsheet here
   stroke-opacity: 0.4;
   stroke-width: 1.5px;
 }
+
 </style>
-<svg width="560" height="660"></svg>
+<svg width="400" height="460"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -57,10 +58,10 @@ var stratify = d3.stratify()
     .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
 
 var tree = d3.tree()
-    .size([2 * Math.PI, 200])
+    .size([2 * Math.PI, 150])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 
-d3.csv("WadeWarren1.github.io/gotwheeldata.csv", function(error, data) {
+d3.csv("gotwheeldata.csv", function(error, data) {
   if (error) throw error;
 
   var root = tree(stratify(data));
@@ -90,7 +91,7 @@ d3.csv("WadeWarren1.github.io/gotwheeldata.csv", function(error, data) {
       .attr("text-anchor", function(d) { return d.x < Math.PI === !d.children ? "start" : "end"; })
       .attr("transform", function(d) { return "rotate(" + (d.x < Math.PI ? d.x - Math.PI / 2 : d.x + Math.PI / 2) * 180 / Math.PI + ")"; })
       .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); })
-      .style("font-size", function(d) {if (d.id.length < 10) {return 25} else if (d.id.length < 15) {return 20}})
+      .style("font-size", function(d) {if (d.id.length < 10) {return 15} else if (d.id.length < 15) {return 12}})
       .attr("fill", "Black")
 });
 
