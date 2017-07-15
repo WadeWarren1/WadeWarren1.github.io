@@ -20,123 +20,84 @@ Add Spreadsheet here
 ### Wheel of Predictions
 
 <style>
-.bar {
-  fill: steelblue;
+
+.node circle {
+  fill: #999;
 }
 
-.bar:hover {
-  fill: brown;
+.node text {
+  font: 12px sans-serif;
+}
+
+.node--internal circle {
+  fill: #555;
+}
+
+.node--internal text {
+  text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
+}
+
+.link {
+  fill: none;
+  stroke: #555;
+  stroke-opacity: 0.4;
+  stroke-width: 1.5px;
 }
 </style>
-
-<div id='d3div'></div>
-
+<svg width="960" height="1060"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
-
 <script>
 
-var w = 800
-var h = 650
-var margin = 5
-var padding = 50
+var svg = d3.select("svg"),
+    width = +svg.attr("width"),
+    height = +svg.attr("height"),
+    g = svg.append("g").attr("transform", "translate(" + (width / 2 + 40) + "," + (height / 2 + 90) + ")");
 
-var gheight = 40
-var gwidth = (gheight*4)
+var stratify = d3.stratify()
+    .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
 
+var tree = d3.tree()
+    .size([2 * Math.PI, 500])
+    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 
-		// Get the data
-  
- d3.csv("WadeWarren1.github.io/data.csv", function(error, data) {
+d3.csv("gotwheeldata.csv", function(error, data) {
+  if (error) throw error;
 
-   data.forEach(function(d) {
-          if (error) throw error;
-                  d.abv = d.abv;
-                  d.id = d.id;
-                  d.num = +d.num;
-              });
-console.log(data)
+  var root = tree(stratify(data));
 
-var maximum = d3.max(data, function(d) { return d.num; });
-        console.log("max is " + maximum);
-
-console.log(maximum)
-
-var svg = d3.select("#d3div")
-            .append("svg")
-            .attr("width", w)
-            .attr("height", h);
-
-var sortBars = function() {
-
-   svg.selectAll("rect")
-      .sort(function(a, b) {
-             return d3.ascending(a.num, b.num);
-               })
-           .transition()
-
-        .duration(1000)
-            .attr("x", function (d,i)
-                     {if (i <6) {return padding} else if (i<12) {return padding+gwidth} else {return padding +(gwidth*2)} })
-           		.attr("y", function(d,i)
-                     {if (i<6) {return (i*gheight)} else if (i<12) {return ((i-6)*gheight) } else {return ((i-12)*gheight)}})
-              .style("fill", function (d) {return d3.rgb(0,(4*d.num),0)})
+  var link = g.selectAll(".link")
+    .data(root.links())
+    .enter().append("path")
+      .attr("class", "link")
+      .attr("d", d3.linkRadial()
+          .angle(function(d) { return d.x; })
+          .radius(function(d) { return d.y; }))
 
 
-              svg.selectAll ("text")
-              .sort(function(a, b) {
-                    return d3.ascending(a.num, b.num);
-                  })
-                  .transition()
+  var node = g.selectAll(".node")
+    .data(root.descendants())
+    .enter().append("g")
+      .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
+      .attr("transform", function(d) { return "translate(" + radialPoint(d.x, d.y) + ")"; })
 
-                  .duration(1000)
+  node.append("circle")
+      .attr("r", 2.5)
+      .attr("fill", "pink")
 
-                  .attr("x", function (d,i)
-                        {if (i <6) {return padding} else if (i<12) {return padding+gwidth} else {return padding +(gwidth*2)} })
-                  .attr("y", function(d,i)
-                        {if (i<6) {return (i*gheight)} else if (i<12) {return ((i-6)*gheight) } else {return ((i-12)*gheight)}})
-                      }
+  node.append("text")
+      .attr("dy", "0.31em")
+      .attr("x", function(d) { return d.x < Math.PI === !d.children ? 6 : -6; })
+      .attr("text-anchor", function(d) { return d.x < Math.PI === !d.children ? "start" : "end"; })
+      .attr("transform", function(d) { return "rotate(" + (d.x < Math.PI ? d.x - Math.PI / 2 : d.x + Math.PI / 2) * 180 / Math.PI + ")"; })
+      .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); })
+      .style("font-size", function(d) {if (d.id.length < 10) {return 25} else if (d.id.length < 15) {return 20}})
+      .attr("fill", "Black")
+});
 
-svg.selectAll (".bar")
-    .data(data)
-    .enter()
-    .append("rect")
-    .attr("class", "bar")
-		.attr("width", gwidth - margin)
-		.attr("height", gheight - margin)
-		.attr("x", function (d,i)
-          {if (i <6) {return padding} else if (i<12) {return padding+gwidth} else {return padding +(gwidth*2)} })
-		.attr("y", function(d,i)
-          {if (i<6) {return (i*gheight)} else if (i<12) {return ((i-6)*gheight) } else {return ((i-12)*gheight)}})
-		.style("fill", function (d) {return d3.rgb(0,(2*d.num),(4*d.num))})
-    .style("stroke", "black")
-    .style("stroke-width", "3px")
-    .on("mouseover", function(d) {d3.select(this)
-         .style("fill", "red")})
-    .on("mouseout", function(d) {d3.select(this)
-        .style("fill", function (d) {return d3.rgb(0,(2*d.num),(4*d.num))})})
+function radialPoint(x, y) {
+  return [(y = +y) * Math.cos(x -= Math.PI / 2), y * Math.sin(x)];
+}
 
-    .on("click", function() {
-             sortBars();
-     });
-
-
-svg.selectAll ("text")
-		.data(data)
-		.enter()
-		.append("text")
-		.attr("width", gwidth + margin)
-	.attr("height", gheight - margin)
-	.attr("x", function (d,i)
-        {if (i <6) {return padding} else if (i<12) {return padding+gwidth} else {return padding +(gwidth*2)} })
-	.attr("y", function(d,i)
-        {if (i<6) {return (i*gheight)} else if (i<12) {return ((i-6)*gheight) } else {return ((i-12)*gheight)}})
-  .attr("dy",(gheight/2))
-  .attr("dx", padding)
-	.text(function(d) { return "(" +d.abv+")"+ " " + d.id + "--" +d.num ; })
-  .attr("font-size", function (d) {return gheight/8})
-  .attr("fill", "white");
-
-	});
 </script>
 
 
