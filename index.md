@@ -60,7 +60,7 @@ var tree = d3.tree()
     .size([2 * Math.PI, 500])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 
-d3.csv("gotwheeldata.csv", function(error, data) {
+d3.csv("WadeWarren1.github.io/gotwheeldata.csv", function(error, data) {
   if (error) throw error;
 
   var root = tree(stratify(data));
