@@ -44,7 +44,7 @@ Add Spreadsheet here
   stroke-width: 1.5px;
 }
 </style>
-<svg width="960" height="1060"></svg>
+<svg width="560" height="660"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -57,7 +57,7 @@ var stratify = d3.stratify()
     .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
 
 var tree = d3.tree()
-    .size([2 * Math.PI, 500])
+    .size([2 * Math.PI, 200])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 
 d3.csv("WadeWarren1.github.io/gotwheeldata.csv", function(error, data) {
