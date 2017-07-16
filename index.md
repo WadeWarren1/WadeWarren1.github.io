@@ -1,8 +1,8 @@
-## Welcome to the Game of Thrones Season 7 Prediction Challenge
+# Welcome to the Game of Thrones Season 7 Prediction Challenge
 
 Thanks for submitting your Game of Thrones season 7 predictions! Below you will find the Rules, Leaderboard, and Wheel of Predictions. These will be updated weekly. Good Luck!
 
-### Rules
+## Rules
 
 Scoring:
 * 1 point for correct survival prediction
@@ -13,11 +13,11 @@ Death timing is divided into 2 categories
 * Early = episodes 1-4
 * Late = episdoes 5-7
 
-### Leaderboard
+## Leaderboard
 
-Add Spreadsheet here
+[Add Table Here]
 
-### Wheel of Predictions
+## Wheel of Predictions
 
 <style>
 
@@ -100,10 +100,3 @@ function radialPoint(x, y) {
 }
 
 </script>
-
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
