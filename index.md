@@ -1,3 +1,5 @@
+
+
 # Welcome to the Game of Thrones Season 7 Challenge
 
 Thanks for submitting your Game of Thrones season 7 predictions! Below you will find the Rules, Leaderboard, and Wheel of Predictions. These will be updated weekly. Good Luck!
@@ -26,7 +28,7 @@ Death timing is divided into 2 categories
 }
 
 .node text {
-  font: 10px sans-serif;
+  font: 13px sans-serif;
 }
 
 .node--internal circle {
@@ -45,7 +47,7 @@ Death timing is divided into 2 categories
 }
 
 </style>
-<svg width="620" height="620"></svg>
+<svg width="920" height="920"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -58,7 +60,7 @@ var stratify = d3.stratify()
     .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
 
 var tree = d3.tree()
-    .size([2 * Math.PI, 200])
+    .size([2 * Math.PI, 300])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 
 d3.csv("gotwheeldata.csv", function(error, data) {
