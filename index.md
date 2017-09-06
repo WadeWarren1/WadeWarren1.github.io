@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>     First Title of the Page </title>
+
+
+    <title>  First Title of the Page </title>
     
    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
