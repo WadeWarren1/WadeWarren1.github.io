@@ -1,11 +1,11 @@
 h1 {
-    px: 35;
-    color: dark red;
+    px: 66;
+    color: red;
     margin-left: 10px;
 }
 
 body {
-    px:20; 
-    background-color: light blue;
+    px:40; 
+    background-color: blue;
 }
 
