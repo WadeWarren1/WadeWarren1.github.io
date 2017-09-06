@@ -1,11 +1,8 @@
-h1 {
-    px: 66;
-    color: red;
-    margin-left: 10px;
+body {
+    background-color: blue;
 }
 
-body {
-    px:40; 
-    background-color: blue;
+h1, p {
+  color: yellow
 }
 
