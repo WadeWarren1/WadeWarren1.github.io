@@ -1,9 +1,11 @@
 h1 {
-    color: steelblue;
+    px: 35;
+    color: dark red;
     margin-left: 10px;
 }
 
 body {
-    background-color: lightred;
+    px:20; 
+    background-color: light blue;
 }
 
