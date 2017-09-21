@@ -1,0 +1,22 @@
+h1 {
+font-family: courier, sans-serif;
+font-size: 35pt;
+color: #205493;
+text-align: center;
+}
+
+body {
+text-align: center;
+background-image: url("Gray_background.jpg")
+}
+
+.paragraph {
+  color: #323aff;
+  font-family: "Times New Roman";
+  font-size: 20px;
+}
+.header {
+  color: #ff0000;
+  font-family: "Times New Roman";
+  font-size: 28px;
+}
