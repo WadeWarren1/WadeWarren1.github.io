@@ -1,1 +1,27 @@
 
+
+
+
+
+h1 {
+font-family: courier, sans-serif;
+font-size: 35pt;
+color: #112e51;
+text-align: center;
+}
+
+body {
+text-align: center;
+background-color: #f1f1f1;
+}
+
+.paragraph {
+  color: #323a45;
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+}
+.header {
+  color: #981b1e;
+  font-family: 'Frijole', cursive;
+  font-size: 28px;
+}
