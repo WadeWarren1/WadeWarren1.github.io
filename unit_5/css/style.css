@@ -36,7 +36,7 @@ text-align: left;
 .d3container {
     position: relative;
     padding-bottom: 75%;
-    height: 0;
+    height: 900;
     overflow: hidden;
 }
 .d3container iframe {
