@@ -7,7 +7,7 @@ nav{
 background-color: #981b1e;
 color: #ffffff;
 text-align: right;
-font-size: 35pt;
+font-size: 30pt;
 padding-top: 40px;
 padding-right: 40px;
 padding-bottom: 20px;
@@ -36,11 +36,7 @@ text-align: left;
 .d3container {
     position: relative;
     padding-bottom: 75%;
-<<<<<<< HEAD
-    height: 900;
-=======
-    height: 1000;
->>>>>>> 4bf9921f877242a91e64f752c16f2792a3f95549
+    height: 1972;
     overflow: hidden;
 }
 .d3container iframe {
