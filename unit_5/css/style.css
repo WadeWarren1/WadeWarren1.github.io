@@ -1,16 +1,16 @@
 body {
   background-color: #ffffff;
-  width: 972px; margin: 0 auto;
+  width: 1972px; margin: 0 auto;
 }
 
 nav{
 background-color: #981b1e;
 color: #ffffff;
 text-align: right;
-font-size: 15pt;
-padding-top: 20px;
-padding-right: 20px;
-padding-bottom: 10px;
+font-size: 35pt;
+padding-top: 40px;
+padding-right: 40px;
+padding-bottom: 20px;
 border: 2px black solid;
 }
 
@@ -23,20 +23,24 @@ header{
 }
 #intro{
   color: #205493;
-  font-size: 20pt;
+  font-size: 60pt;
   text-align: right;
 }
 
 h1 {
 font-family: 'Rye', cursive;
-font-size: 25pt;
+font-size: 80pt;
 color: #205493;
 text-align: left;
 }
 .d3container {
     position: relative;
     padding-bottom: 75%;
+<<<<<<< HEAD
     height: 900;
+=======
+    height: 1000;
+>>>>>>> 4bf9921f877242a91e64f752c16f2792a3f95549
     overflow: hidden;
 }
 .d3container iframe {
@@ -51,9 +55,9 @@ footer {
   background-color: #205493;
   color: #ffffff;
   text-align: right;
-  font-size: 15pt;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 10px;
+  font-size: 30pt;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
   border: 2px black solid;
 }
