@@ -33,10 +33,18 @@ font-size: 80pt;
 color: #205493;
 text-align: left;
 }
+
+h2 {
+  font-family: 'Rye', cursive;
+  font-size: 40pt;
+  color: #205493;
+  text-align: left;
+}
 .d3container {
     position: relative;
-    padding-bottom: 75%;
-    height: 1972;
+    padding-bottom: 50%;
+    height: auto;
+    width: auto;
     overflow: hidden;
 }
 .d3container iframe {
