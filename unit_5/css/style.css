@@ -36,13 +36,13 @@ text-align: left;
 
 h2 {
   font-family: 'Rye', cursive;
-  font-size: 40pt;
+  font-size: 50pt;
   color: #205493;
   text-align: left;
 }
 .d3container {
     position: relative;
-    padding-bottom: 50%;
+    padding-bottom: 25%;
     height: auto;
     width: auto;
     overflow: hidden;
