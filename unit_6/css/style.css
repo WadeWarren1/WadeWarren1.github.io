@@ -34,6 +34,11 @@ background-color: #e59393;
   height: 0;
   font-size 0;
 }
+main {
+  background-color: #ffffff;
+  margin-left: 100px;
+  margin-right: 100px;
+}
 
 header{
   background-color: #ffffff;
