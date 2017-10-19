@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <style>
+    .bar {
+      fill: steelblue;
+    }
+
+    .bar:hover {
+      fill: brown;
+    }
+    </style>
   </head>
 <body>
     <nav class="clearfix">
@@ -18,10 +28,10 @@
     </header>
     <h1> Sample Practice </h1>
     <h2> Sortable Grid</h2>
-    <p id="d3description"> This is a sortable grid. It's color coded based on the value within each cell. Clicking on any cell will reorganize the grid in ascending value. <p>
-    <div class="d3container">
-      <iframe src= "d3example/grid.html" frameborder="no" scrolling= "no" > </iframe>
-    </div>
+    <p id="d3description"> This is a sortable grid. It's color coded based on the value within each cell. Clicking on any cell will reorganize the grid in ascending value. </p>
+
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+          <script src="d3example/grid.js"> </script>
     <h2> Line Graph</h2>
     <p id="d3description"> This is a line graph with 4 different lines plotted. The x-axis represents time in months and the y axis shows expenditures in dollars</p>
     <div class="d3container">
